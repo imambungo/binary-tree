@@ -88,6 +88,13 @@ class BinaryTree {
             System.out.println(this.root.jumlahDaun());
     }
 
+    public void depth() {
+        if (isEmpty())
+            System.out.println(0);
+        else
+            System.out.println(this.root.depth());
+    }
+
     class Node {
         private int value;
         private Node rightChild;
@@ -137,13 +144,14 @@ class BinaryTree {
             System.out.print(this.value + " ");
             if (this.getLeftChild() != null)
                 this.getLeftChild().printPre();
-            if (this.getRightChild() != null)//Kalo tidak pake if, bisa kena null pointer exception misal rightchild == null
+            if (this.getRightChild() != null)// Kalo tidak pake if, bisa kena null pointer exception misal rightchild ==
+                                             // null
                 this.getRightChild().printPre();
         }
 
         public void printIn() {
             if (this.getLeftChild() != null)
-            this.getLeftChild().printIn();
+                this.getLeftChild().printIn();
             System.out.print(this.value + " ");
             if (this.getRightChild() != null)
                 this.getRightChild().printIn();
@@ -151,7 +159,7 @@ class BinaryTree {
 
         public void printPost() {
             if (this.getLeftChild() != null)
-            this.getLeftChild().printPost();
+                this.getLeftChild().printPost();
             if (this.getRightChild() != null)
                 this.getRightChild().printPost();
             System.out.print(this.value + " ");
@@ -174,6 +182,23 @@ class BinaryTree {
             if (this.getRightChild() != null)
                 return this.getRightChild().jumlahDaun();
             return 1;
+        }
+
+        public int depth() {
+            if (this.getLeftChild() != null && this.getRightChild() != null)
+                return 1 + max(this.getLeftChild().depth(), this.getRightChild().depth());
+            if (this.getLeftChild() != null)
+                return 1 + this.getLeftChild().depth();
+            if (this.getRightChild() != null)
+                return 1+ this.getRightChild().depth();
+            return 0;
+        }
+
+        private int max(int a, int b) {
+            if (a > b)
+                return a;
+            else
+                return b;
         }
     }
 }

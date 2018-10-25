@@ -15,5 +15,6 @@ class Main {
         a.printPostOrder();
         a.printLeaf();
         a.jumlahDaun();
+        a.depth();
     }
 }
