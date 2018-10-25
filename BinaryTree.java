@@ -45,6 +45,12 @@ class BinaryTree {
         return deletedChild;
     }
 
+    public void printPostOrder() {
+        if (!isEmpty()) {
+            this.root.printPost();
+        }
+    }
+
     class Node {
         private int value;
         private Node rightChild;
@@ -80,6 +86,14 @@ class BinaryTree {
 
         public void delRightChild() {
             this.rightChild = null;
+        }
+
+        public void printPost() {
+            if (this.getRightChild() != null)
+                this.getRightChild().printPost();
+            if (this.getLeftChild() != null)
+                this.getLeftChild().printPost();
+            System.out.print(this.value + " ");
         }
     }
 }
