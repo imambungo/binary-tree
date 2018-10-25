@@ -12,6 +12,18 @@ class BinaryTree {
         return false;
     }
 
+    public boolean isLeaf(Node N) {
+        return N.getRightChild() == null && N.getLeftChild() == null;
+    }
+
+    public void addLeft(Node N, int value) {
+        N.setLeftChild(value);
+    }
+
+    public void addRight(Node N, int value) {
+        N.setRightChild(value);
+    }
+
     class Node {
         private int value;
         private Node rightChild;
@@ -31,6 +43,14 @@ class BinaryTree {
 
         public Node getLeftChild() {
             return this.leftChild;
+        }
+
+        public void setRightChild(int value) {
+            this.rightChild = new Node(value);
+        }
+
+        public void setLeftChild(int value) {
+            this.leftChild = new Node(value);
         }
     }
 }
