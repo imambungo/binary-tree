@@ -53,10 +53,25 @@ class BinaryTree {
         return deletedChild;
     }
 
+    public void printPreOrder() {
+        if (!isEmpty()) {
+            this.root.printPre();
+        }
+        System.out.println();
+    }
+
+    public void printInOrder() {
+        if (!isEmpty()) {
+            this.root.printIn();
+        }
+        System.out.println();
+    }
+
     public void printPostOrder() {
         if (!isEmpty()) {
             this.root.printPost();
         }
+        System.out.println();
     }
 
     class Node {
@@ -98,6 +113,22 @@ class BinaryTree {
 
         public void delRightChild() {
             this.rightChild = null;
+        }
+
+        public void printPre() {
+            System.out.print(this.value + " ");
+            if (this.getRightChild() != null)//Kalo tidak pake if, bisa kena null pointer exception misal rightchild == null
+                this.getRightChild().printPre();
+            if (this.getLeftChild() != null)
+                this.getLeftChild().printPre();
+        }
+
+        public void printIn() {
+            if (this.getRightChild() != null)
+                this.getRightChild().printIn();
+            System.out.print(this.value + " ");
+            if (this.getLeftChild() != null)
+                this.getLeftChild().printIn();
         }
 
         public void printPost() {

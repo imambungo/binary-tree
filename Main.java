@@ -10,6 +10,8 @@ class Main {
         a.root.getRightChild().setRightChild(7);
         a.root.getLeftChild().getLeftChild().setLeftChild(8);
         a.root.getLeftChild().getLeftChild().setRightChild(9);
+        a.printPreOrder();
+        a.printInOrder();
         a.printPostOrder();
     }
 }
