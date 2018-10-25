@@ -13,5 +13,6 @@ class Main {
         a.printPreOrder();
         a.printInOrder();
         a.printPostOrder();
+        a.printLeaf();
     }
 }

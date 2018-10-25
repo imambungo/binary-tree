@@ -74,6 +74,13 @@ class BinaryTree {
         System.out.println();
     }
 
+    public void printLeaf() {
+        if (!isEmpty()) {
+            this.root.printLeaf();
+        }
+        System.out.println();
+    }
+
     class Node {
         private int value;
         private Node rightChild;
@@ -115,6 +122,10 @@ class BinaryTree {
             this.rightChild = null;
         }
 
+        public boolean isLeaf() {
+            return this.getRightChild() == null && this.getLeftChild() == null;
+        }
+
         public void printPre() {
             System.out.print(this.value + " ");
             if (this.getLeftChild() != null)
@@ -137,6 +148,15 @@ class BinaryTree {
             if (this.getRightChild() != null)
                 this.getRightChild().printPost();
             System.out.print(this.value + " ");
+        }
+
+        public void printLeaf() {
+            if (isLeaf())
+                System.out.print(this.value + " ");
+            if (this.getLeftChild() != null)
+                this.getLeftChild().printLeaf();
+            if (this.getRightChild() != null)
+                this.getRightChild().printLeaf();
         }
     }
 }
