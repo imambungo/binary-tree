@@ -1,8 +1,16 @@
 class BinaryTree {
     public Node root;
 
+    public BinaryTree() {
+        this.root = null;
+    }
+
     public boolean isEmpty() {
         return this.root == null;
+    }
+
+    public void plant(int value) {
+        this.root = new Node(value);
     }
 
     public boolean isOneElement() {
@@ -62,6 +70,10 @@ class BinaryTree {
 
         public int getValue() {
             return this.value;
+        }
+
+        public void setValue(int value) {
+            this.value = value;
         }
 
         public Node getRightChild() {
