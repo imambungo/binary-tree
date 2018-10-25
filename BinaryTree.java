@@ -24,6 +24,18 @@ class BinaryTree {
         N.setRightChild(value);
     }
 
+    public Node delLeftChild(Node N) {
+        Node returnNode = N.getLeftChild();
+        N.delLeftChild();
+        return returnNode;
+    }
+
+    public Node delRightChild(Node N) {
+        Node returnNode = N.getRightChild();
+        N.delRightChild();
+        return returnNode;
+    }
+
     class Node {
         private int value;
         private Node rightChild;
@@ -51,6 +63,14 @@ class BinaryTree {
 
         public void setLeftChild(int value) {
             this.leftChild = new Node(value);
+        }
+
+        public void delLeftChild() {
+            this.leftChild = null;
+        }
+
+        public void delRightChild() {
+            this.rightChild = null;
         }
     }
 }
