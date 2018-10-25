@@ -7,8 +7,9 @@ class BinaryTree {
 
     public boolean isOneElement() {
         if (!isEmpty()) {
-            return this.root.
+            return this.root.getRightChild() == null && this.root.getLeftChild() == null;
         }
+        return false;
     }
 
     class Node {
