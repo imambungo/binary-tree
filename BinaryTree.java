@@ -36,6 +36,15 @@ class BinaryTree {
         return returnNode;
     }
 
+    public int delChild(Node N) {
+        int deletedChild = 0;
+        if (delRightChild(N) != null)
+            deletedChild++;
+        if (delLeftChild(N) != null)
+            deletedChild++;
+        return deletedChild;
+    }
+
     class Node {
         private int value;
         private Node rightChild;
