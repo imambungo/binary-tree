@@ -14,5 +14,6 @@ class Main {
         a.printInOrder();
         a.printPostOrder();
         a.printLeaf();
+        a.jumlahDaun();
     }
 }

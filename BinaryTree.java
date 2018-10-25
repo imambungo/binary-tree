@@ -81,6 +81,13 @@ class BinaryTree {
         System.out.println();
     }
 
+    public void jumlahDaun() {
+        if (isEmpty())
+            System.out.println(0);
+        else
+            System.out.println(this.root.jumlahDaun());
+    }
+
     class Node {
         private int value;
         private Node rightChild;
@@ -157,6 +164,16 @@ class BinaryTree {
                 this.getLeftChild().printLeaf();
             if (this.getRightChild() != null)
                 this.getRightChild().printLeaf();
+        }
+
+        public int jumlahDaun() {
+            if (this.getLeftChild() != null && this.getRightChild() != null)
+                return this.getLeftChild().jumlahDaun() + this.getRightChild().jumlahDaun();
+            if (this.getLeftChild() != null)
+                return this.getLeftChild().jumlahDaun();
+            if (this.getRightChild() != null)
+                return this.getRightChild().jumlahDaun();
+            return 1;
         }
     }
 }
