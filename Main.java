@@ -16,5 +16,14 @@ class Main {
         a.printLeaf();
         a.jumlahDaun();
         a.depth();
+
+        BinaryTree b = new BinaryTree();
+        // b.plant(1);
+        b.printPreOrder();
+        b.printInOrder();
+        b.printPostOrder();
+        b.printLeaf();
+        b.jumlahDaun();
+        b.depth();
     }
 }
