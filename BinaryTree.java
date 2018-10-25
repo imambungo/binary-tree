@@ -117,25 +117,25 @@ class BinaryTree {
 
         public void printPre() {
             System.out.print(this.value + " ");
-            if (this.getRightChild() != null)//Kalo tidak pake if, bisa kena null pointer exception misal rightchild == null
-                this.getRightChild().printPre();
             if (this.getLeftChild() != null)
                 this.getLeftChild().printPre();
+            if (this.getRightChild() != null)//Kalo tidak pake if, bisa kena null pointer exception misal rightchild == null
+                this.getRightChild().printPre();
         }
 
         public void printIn() {
+            if (this.getLeftChild() != null)
+            this.getLeftChild().printIn();
+            System.out.print(this.value + " ");
             if (this.getRightChild() != null)
                 this.getRightChild().printIn();
-            System.out.print(this.value + " ");
-            if (this.getLeftChild() != null)
-                this.getLeftChild().printIn();
         }
 
         public void printPost() {
+            if (this.getLeftChild() != null)
+            this.getLeftChild().printPost();
             if (this.getRightChild() != null)
                 this.getRightChild().printPost();
-            if (this.getLeftChild() != null)
-                this.getLeftChild().printPost();
             System.out.print(this.value + " ");
         }
     }
