@@ -76,7 +76,24 @@ class BinaryTree {
 
     public void printPostOrderN() {
         if (!isEmpty()) {
-            int patokanStatus = this.root.status;
+            boolean patokanStatus = this.root.status;
+            Node pointer = this.root;
+            while (true) {
+                if (pointer.getLeftChild() != null && pointer.getLeftChild().status == patokanStatus) {
+                    pointer = pointer.getLeftChild();
+                } else if (pointer.getRightChild() != null && pointer.getRightChild().status == patokanStatus) {
+                    pointer = pointer.getRightChild();
+                } else {
+                    pointer.status = !patokanStatus;
+                    System.out.print(pointer.getValue() + " ");
+                    if (pointer.parent == null) {
+                        break;
+                    } else {
+                        pointer = pointer.parent;
+                    }
+                }
+            }
+            System.out.println();
         }
     }
 
@@ -106,7 +123,7 @@ class BinaryTree {
         private Node rightChild;
         private Node leftChild;
         private Node parent;
-        int status = 0;
+        boolean status;
 
         public Node(int value, Node parent) {
             this.value = value;
