@@ -74,7 +74,7 @@ class BinaryTree {
         System.out.println();
     }
 
-    public void printPostOrderN() {
+    public void printPostOrderN() {// print without recursion
         if (!isEmpty()) {
             boolean patokanStatus = this.root.status;
             Node pointer = this.root;

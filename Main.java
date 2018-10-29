@@ -13,6 +13,8 @@ class Main {
         a.printPreOrder();
         a.printInOrder();
         a.printPostOrder();
+        a.printPostOrderN();//print without recursion
+        a.printPostOrderN();
         a.printLeaf();
         a.jumlahDaun();
         a.depth();
@@ -21,7 +23,8 @@ class Main {
         // b.plant(1);
         b.printPreOrder();
         b.printInOrder();
-        b.printPostOrder();
+        b.printPostOrderN();
+        b.printPostOrderN();
         b.printLeaf();
         b.jumlahDaun();
         b.depth();
