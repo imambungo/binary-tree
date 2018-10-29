@@ -10,7 +10,7 @@ class BinaryTree {
     }
 
     public void plant(int value) {
-        this.root = new Node(value);
+        this.root = new Node(value, null);
     }
 
     public boolean isOneElement() {
@@ -74,6 +74,12 @@ class BinaryTree {
         System.out.println();
     }
 
+    public void printPostOrderN() {
+        if (!isEmpty()) {
+            int patokanStatus = this.root.status;
+        }
+    }
+
     public void printLeaf() {
         if (!isEmpty()) {
             this.root.printLeaf();
@@ -99,9 +105,12 @@ class BinaryTree {
         private int value;
         private Node rightChild;
         private Node leftChild;
+        private Node parent;
+        int status = 0;
 
-        public Node(int value) {
+        public Node(int value, Node parent) {
             this.value = value;
+            this.parent = parent;
         }
 
         public int getValue() {
@@ -121,11 +130,11 @@ class BinaryTree {
         }
 
         public void setRightChild(int value) {
-            this.rightChild = new Node(value);
+            this.rightChild = new Node(value, this);
         }
 
         public void setLeftChild(int value) {
-            this.leftChild = new Node(value);
+            this.leftChild = new Node(value, this);
         }
 
         public void delLeftChild() {
@@ -190,7 +199,7 @@ class BinaryTree {
             if (this.getLeftChild() != null)
                 return 1 + this.getLeftChild().depth();
             if (this.getRightChild() != null)
-                return 1+ this.getRightChild().depth();
+                return 1 + this.getRightChild().depth();
             return 0;
         }
 
