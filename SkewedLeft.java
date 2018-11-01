@@ -5,7 +5,7 @@ public class SkewedLeft {
     //
 
     public boolean isLeaf(Node N) {
-        return N.leftChild() == null;
+        return N.leftChild == null;
     }
 
     // insert
