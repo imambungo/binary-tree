@@ -11,6 +11,7 @@ public class SkewedLeft {
     // insert
     public void insertAsLeaf(char newValue) {
         this.leaf.leftChild = new Node(newValue, this.leaf);
+        this.leaf = this.leaf.leftChild;
     }
 
     public void insertAsRoot(char newValue) {
