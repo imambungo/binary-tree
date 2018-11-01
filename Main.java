@@ -26,5 +26,7 @@ class Main {
         // b.jumlahDaun();
         // b.depth();
 
+        SkewedLeft a = new SkewedLeft();
+        a.insertAsLeaf('A');
     }
 }

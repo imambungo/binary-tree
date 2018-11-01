@@ -55,7 +55,7 @@ public class SkewedLeft {
     }
 
     class Node {
-        int value;
+        char value;
         Node leftChild;
         Node parent;
 
