@@ -28,5 +28,16 @@ class Main {
 
         SkewedLeft a = new SkewedLeft();
         a.insertAsLeaf('A');
+        a.insertAsLeaf('B');
+        a.insertAsLeaf('C');
+        a.insertAsLeaf('D');
+        a.insertAsRoot('E');
+        a.insertAsRoot('F');
+        a.insertAsRoot('G');
+        a.insertAsRoot('H');
+        a.delLeaf();
+        a.delRoot();
+        System.out.println("depth : " + a.depth());
+        a.printTree();
     }
 }

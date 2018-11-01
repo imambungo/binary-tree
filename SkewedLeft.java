@@ -59,7 +59,7 @@ public class SkewedLeft {
         Node leftChild;
         Node parent;
 
-        Node(int value, Node parent) {
+        Node(char value, Node parent) {
             this.value = value;
             this.parent = parent;
         }
