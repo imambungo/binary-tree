@@ -30,6 +30,22 @@ class BinaryTree {
         return this.root.getLeftChild().isSkewedLeft();
     }
 
+    public void generateCompleteBinaryTree(int n) {
+        if (this.root != null) {
+            System.out.println("Sudah ada isi, bikin binary tree kosong dulu!");
+        } else {
+            plant(1);
+            if (2 <= n) {
+                this.root.setLeftChild(2);
+                this.root.getLeftChild().generateCompleteBinaryTree(n);
+            }
+            if (3 <= n) {
+                this.root.setRightChild(3);
+                this.root.getRightChild().generateCompleteBinaryTree(n);
+            }
+        }
+    }
+
     public boolean isLeaf(Node N) {
         return N.getRightChild() == null && N.getLeftChild() == null;
     }
@@ -217,6 +233,17 @@ class BinaryTree {
             if (this.getLeftChild() == null)
                 return true;
             return this.getLeftChild().isSkewedLeft();
+        }
+
+        public void generateCompleteBinaryTree(int n) {
+            if (this.value * 2 <= n) {
+                this.setLeftChild(this.value * 2);
+                this.getLeftChild().generateCompleteBinaryTree(n);
+            }
+            if (this.value * 2 + 1 <= n) {
+                this.setRightChild(this.value * 2 + 1);
+                this.getRightChild().generateCompleteBinaryTree(n);
+            }
         }
     }
 }
