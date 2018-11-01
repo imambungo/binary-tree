@@ -20,6 +20,16 @@ class BinaryTree {
         return false;
     }
 
+    public boolean isSkewedLeft() {
+        if (this.root == null)
+            return true;
+        if (this.root.getRightChild() != null)
+            return false;
+        if (this.root.getLeftChild() == null)
+            return true;
+        return this.root.getLeftChild().isSkewedLeft();
+    }
+
     public boolean isLeaf(Node N) {
         return N.getRightChild() == null && N.getLeftChild() == null;
     }
@@ -190,7 +200,7 @@ class BinaryTree {
             if (this.getLeftChild() != null)
                 return 1 + this.getLeftChild().depth();
             if (this.getRightChild() != null)
-                return 1+ this.getRightChild().depth();
+                return 1 + this.getRightChild().depth();
             return 0;
         }
 
@@ -199,6 +209,14 @@ class BinaryTree {
                 return a;
             else
                 return b;
+        }
+
+        public boolean isSkewedLeft() {
+            if (this.getRightChild() != null)
+                return false;
+            if (this.getLeftChild() == null)
+                return true;
+            return this.getLeftChild().isSkewedLeft();
         }
     }
 }
