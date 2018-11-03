@@ -1,5 +1,6 @@
 class BinaryTree {
     public Node root;
+    public int size;
 
     public BinaryTree() {
         this.root = null;
@@ -11,13 +12,15 @@ class BinaryTree {
 
     public void plant(int value) {
         this.root = new Node(value);
+        this.size++;
     }
 
     public boolean isOneElement() {
-        if (!isEmpty()) {
-            return this.root.getRightChild() == null && this.root.getLeftChild() == null;
-        }
-        return false;
+        // if (!isEmpty()) {
+        // return this.root.getRightChild() == null && this.root.getLeftChild() == null;
+        // }
+        // return false;
+        return this.size == 1;
     }
 
     public boolean isSkewedLeft() {
@@ -148,18 +151,22 @@ class BinaryTree {
 
         public void setRightChild(int value) {
             this.rightChild = new Node(value);
+            size++;
         }
 
         public void setLeftChild(int value) {
             this.leftChild = new Node(value);
+            size++;
         }
 
         public void delLeftChild() {
             this.leftChild = null;
+            size--;
         }
 
         public void delRightChild() {
             this.rightChild = null;
+            size--;
         }
 
         public boolean isLeaf() {

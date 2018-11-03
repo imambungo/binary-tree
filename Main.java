@@ -38,6 +38,7 @@ class Main {
         // a.root.getLeftChild().getLeftChild().setLeftChild(8);
         // a.root.getLeftChild().getLeftChild().setRightChild(9);
         // System.out.println(a.isSkewedLeft());
+        // System.out.println(a.size);
 
         // BinaryTree b = new BinaryTree();
         // b.plant(1);
@@ -47,15 +48,17 @@ class Main {
         // System.out.println(b.isSkewedLeft());
         // b.root.getLeftChild().getLeftChild().setRightChild(5);
         // System.out.println(b.isSkewedLeft());
+        // System.out.println(b.size);
 
         // TES GENERATE COMPLETE BINARY TREE
-        BinaryTree a = new BinaryTree();
-        a.generateCompleteBinaryTree(9);
-        a.printPreOrder();
-        a.printInOrder();
-        a.printPostOrder();
-        a.printLeaf();
-        a.jumlahDaun();
-        a.depth();
+        // BinaryTree a = new BinaryTree();
+        // a.generateCompleteBinaryTree(9);
+        // a.printPreOrder();
+        // a.printInOrder();
+        // a.printPostOrder();
+        // a.printLeaf();
+        // a.jumlahDaun();
+        // a.depth();
+        // System.out.println(a.size);
     }
 }
