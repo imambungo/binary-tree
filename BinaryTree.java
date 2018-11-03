@@ -66,7 +66,7 @@ class BinaryTree {
                 }
             }
             while (!path.empty()) {
-                if (path.pop() == 1) {
+                if (path.pop().getIsiInt() == 1) {
                     pointer = pointer.getRightChild();
                 } else {
                     pointer = pointer.getLeftChild();
