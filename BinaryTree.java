@@ -49,6 +49,34 @@ class BinaryTree {
         }
     }
 
+    public int get(int index) {
+        if (index < 0 || index > this.size - 1) {
+            System.out.println("index out of bound!");
+        } else {
+            Node pointer = this.root;
+            Stack path = new Stack();
+            int traverseIndex = index;
+            while (traverseIndex != 0) {
+                if (traverseIndex % 2 == 0) {
+                    path.push(1);
+                    traverseIndex = traverseIndex / 2 - 1;
+                } else {
+                    path.push(0);
+                    traverseIndex = traverseIndex / 2;
+                }
+            }
+            while (!path.empty()) {
+                if (path.pop() == 1) {
+                    pointer = pointer.getRightChild();
+                } else {
+                    pointer = pointer.getLeftChild();
+                }
+            }
+            return pointer.getValue();
+        }
+        return 0;
+    }
+
     public boolean isLeaf(Node N) {
         return N.getRightChild() == null && N.getLeftChild() == null;
     }
