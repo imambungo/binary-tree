@@ -51,14 +51,17 @@ class Main {
         // System.out.println(b.size);
 
         // TES GENERATE COMPLETE BINARY TREE
-        // BinaryTree a = new BinaryTree();
-        // a.generateCompleteBinaryTree(9);
-        // a.printPreOrder();
-        // a.printInOrder();
-        // a.printPostOrder();
-        // a.printLeaf();
-        // a.jumlahDaun();
-        // a.depth();
-        // System.out.println(a.size);
+        BinaryTree a = new BinaryTree();
+        a.generateCompleteBinaryTree(9);
+        a.printPreOrder();
+        a.printInOrder();
+        a.printPostOrder();
+        a.printLeaf();
+        a.jumlahDaun();
+        a.depth();
+        System.out.println(a.size);
+        for (int i = 0; i < 9; i++) {
+            System.out.println(a.get(i));
+        }
     }
 }
