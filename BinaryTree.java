@@ -77,6 +77,37 @@ class BinaryTree {
         return 0;
     }
 
+    public void push(int value) {
+        if (this.size == 0) {
+            plant(value);
+        } else {
+            Node pointer = this.root;
+            Stack path = new Stack();
+            int traverseIndex = this.size;
+            while (traverseIndex != 0) {
+                if (traverseIndex % 2 == 0) {
+                    path.push(1);
+                    traverseIndex = traverseIndex / 2 - 1;
+                } else {
+                    path.push(0);
+                    traverseIndex = traverseIndex / 2;
+                }
+            }
+            while (path.size() != 1) {
+                if (path.pop().getIsiInt() == 1) {
+                    pointer = pointer.getRightChild();
+                } else {
+                    pointer = pointer.getLeftChild();
+                }
+            }
+            if (path.pop().getIsiInt() == 1) {
+                pointer.setRightChild(value);
+            } else {
+                pointer.setLeftChild(value);
+            }
+        }
+    }
+
     public boolean isLeaf(Node N) {
         return N.getRightChild() == null && N.getLeftChild() == null;
     }

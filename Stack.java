@@ -16,4 +16,8 @@ public class Stack {
     public boolean empty() {
         return a.size() == 0;
     }
+
+    public int size() {
+        return a.size();
+    }
 }
