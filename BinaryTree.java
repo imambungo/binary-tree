@@ -122,13 +122,15 @@ class BinaryTree {
 
     public Node delLeftChild(Node N) {
         Node returnNode = N.getLeftChild();
-        N.delLeftChild();
+        this.size -= returnNode.size();
+        N.leftChild = null;
         return returnNode;
     }
 
     public Node delRightChild(Node N) {
         Node returnNode = N.getRightChild();
-        N.delRightChild();
+        this.size -= returnNode.size();
+        N.rightChild = null;
         return returnNode;
     }
 
@@ -218,14 +220,18 @@ class BinaryTree {
             size++;
         }
 
-        public void delLeftChild() {
+        public Node delLeftChild() {
+            Node returnNode = this.leftChild;
             this.leftChild = null;
             size--;
+            return returnNode;
         }
 
-        public void delRightChild() {
+        public Node delRightChild() {
+            Node returnNode = this.rightChild;
             this.rightChild = null;
             size--;
+            return returnNode;
         }
 
         public boolean isLeaf() {
@@ -310,6 +316,13 @@ class BinaryTree {
                 this.setRightChild(this.value * 2 + 1);
                 this.getRightChild().generateCompleteBinaryTree(n);
             }
+        }
+
+        public int size() {
+            int returnSize = 1;
+            returnSize += this.leftChild != null ? this.leftChild.size() : 0;
+            returnSize += this.rightChild != null ? this.rightChild.size() : 0;
+            return returnSize;
         }
     }
 }

@@ -63,5 +63,11 @@ class Main {
         for (int i = 0; i < 9; i++) {
             System.out.println(a.get(i));
         }
+        a.push(10);
+        System.out.println(a.get(9));
+        System.out.println(a.size);
+        System.out.println(a.root.depth());
+        a.delLeftChild(a.root.getLeftChild());
+        System.out.println(a.size);
     }
 }
