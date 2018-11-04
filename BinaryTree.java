@@ -1,4 +1,5 @@
 import dependencies.Stack;
+
 class BinaryTree {
     public Node root;
     public int size;
@@ -112,8 +113,9 @@ class BinaryTree {
     public int pop() {
         if (this.size == 0) {
             System.out.println("Binary Tree sudah kosong!");
-        }
-        if (this.size != 0) {
+        } else if (this.size == 1) {
+            return this.root.getValue();
+        } else {
             Node pointer = this.root;
             Stack path = new Stack();
             int traverseIndex = this.size - 1;
@@ -126,7 +128,7 @@ class BinaryTree {
                     traverseIndex = traverseIndex / 2;
                 }
             }
-            while (path.size() != 1) {
+            while (path.size() > 1) {
                 if (path.pop().getIsiInt() == 1) {
                     pointer = pointer.getRightChild();
                 } else {
