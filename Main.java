@@ -66,8 +66,7 @@ class Main {
         a.push(10);
         System.out.println(a.get(9));
         System.out.println(a.size);
-        System.out.println(a.root.depth());
-        a.delLeftChild(a.root.getLeftChild());
+        a.pop();
         System.out.println(a.size);
     }
 }

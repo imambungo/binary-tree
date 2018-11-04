@@ -108,6 +108,39 @@ class BinaryTree {
         }
     }
 
+    public int pop() {
+        if (this.size == 0) {
+            System.out.println("Binary Tree sudah kosong!");
+        }
+        if (this.size != 0) {
+            Node pointer = this.root;
+            Stack path = new Stack();
+            int traverseIndex = this.size - 1;
+            while (traverseIndex != 0) {
+                if (traverseIndex % 2 == 0) {
+                    path.push(1);
+                    traverseIndex = traverseIndex / 2 - 1;
+                } else {
+                    path.push(0);
+                    traverseIndex = traverseIndex / 2;
+                }
+            }
+            while (path.size() != 1) {
+                if (path.pop().getIsiInt() == 1) {
+                    pointer = pointer.getRightChild();
+                } else {
+                    pointer = pointer.getLeftChild();
+                }
+            }
+            if (path.pop().getIsiInt() == 1) {
+                return pointer.delRightChild().getValue();
+            } else {
+                return pointer.delLeftChild().getValue();
+            }
+        }
+        return 0;
+    }
+
     public boolean isLeaf(Node N) {
         return N.getRightChild() == null && N.getLeftChild() == null;
     }
