@@ -1,3 +1,5 @@
+package dependencies;
+
 public class MyLinkedList {// Berperan sebagai Head
     private Node next;
     private Node tail;
@@ -178,20 +180,5 @@ public class MyLinkedList {// Berperan sebagai Head
             this.size--;
         }
         return temp;
-    }
-}
-
-class Node {
-    private int isiInt;
-    protected Node next;
-    protected Node prev;
-
-    public Node(int isiInt, Node prev) {
-        this.isiInt = isiInt;
-        this.prev = prev;
-    }
-
-    public int getIsiInt() {
-        return this.isiInt;
     }
 }

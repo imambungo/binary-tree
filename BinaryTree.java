@@ -1,3 +1,4 @@
+import dependencies.Stack;
 class BinaryTree {
     public Node root;
     public int size;

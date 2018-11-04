@@ -1,3 +1,4 @@
+package dependencies;
 public class Stack {
     MyLinkedList a = new MyLinkedList();
 
