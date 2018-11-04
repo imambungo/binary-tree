@@ -2,5 +2,10 @@
 
 How to run:
 ```
-javac Main.java && java Main
+java -cp classes Main
+```
+
+Compile and run:
+```
+javac -d classes Main.java && java -cp classes Main
 ```
