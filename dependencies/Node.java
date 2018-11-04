@@ -1,4 +1,5 @@
 package dependencies;
+
 public class Node {
     private int isiInt;
     protected Node next;

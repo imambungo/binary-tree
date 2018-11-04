@@ -1,72 +1,62 @@
+import dependencies.MyLinkedList;
+import dependencies.HitungWaktu;
+
 class Main {
     public static void main(String[] args) {
-        // BinaryTree a = new BinaryTree();
-        // a.plant(1);
-        // a.root.setLeftChild(2);
-        // a.root.setRightChild(3);
-        // a.root.getLeftChild().setLeftChild(4);
-        // a.root.getLeftChild().setRightChild(5);
-        // a.root.getRightChild().setLeftChild(6);
-        // a.root.getRightChild().setRightChild(7);
-        // a.root.getLeftChild().getLeftChild().setLeftChild(8);
-        // a.root.getLeftChild().getLeftChild().setRightChild(9);
-        // a.printPreOrder();
-        // a.printInOrder();
-        // a.printPostOrder();
-        // a.printLeaf();
-        // a.jumlahDaun();
-        // a.depth();
+        HitungWaktu btPush = new HitungWaktu("BinaryTree push");
+        HitungWaktu btPop = new HitungWaktu("BinaryTree pop");
+        HitungWaktu btGet = new HitungWaktu("BinaryTree get");
+        HitungWaktu llPush = new HitungWaktu("Linked List push");
+        HitungWaktu llPop = new HitungWaktu("Linked List pop");
+        HitungWaktu llGet = new HitungWaktu("Linked List get");
 
-        // BinaryTree b = new BinaryTree();
-        // // b.plant(1);
-        // b.printPreOrder();
-        // b.printInOrder();
-        // b.printPostOrder();
-        // b.printLeaf();
-        // b.jumlahDaun();
-        // b.depth();
+        int size = 10000000;
 
-        // TES SKEWED LEFT TREE
-        // BinaryTree a = new BinaryTree();
-        // a.plant(1);
-        // a.root.setLeftChild(2);
-        // a.root.setRightChild(3);
-        // a.root.getLeftChild().setLeftChild(4);
-        // a.root.getLeftChild().setRightChild(5);
-        // a.root.getRightChild().setLeftChild(6);
-        // a.root.getRightChild().setRightChild(7);
-        // a.root.getLeftChild().getLeftChild().setLeftChild(8);
-        // a.root.getLeftChild().getLeftChild().setRightChild(9);
-        // System.out.println(a.isSkewedLeft());
-        // System.out.println(a.size);
-
-        // BinaryTree b = new BinaryTree();
-        // b.plant(1);
-        // b.root.setLeftChild(2);
-        // b.root.getLeftChild().setLeftChild(3);
-        // b.root.getLeftChild().getLeftChild().setLeftChild(4);
-        // System.out.println(b.isSkewedLeft());
-        // b.root.getLeftChild().getLeftChild().setRightChild(5);
-        // System.out.println(b.isSkewedLeft());
-        // System.out.println(b.size);
-
-        // TES GENERATE COMPLETE BINARY TREE
+        // Binary Tree Push
+        btPush.startTimeM();
         BinaryTree a = new BinaryTree();
-        a.generateCompleteBinaryTree(9);
-        a.printPreOrder();
-        a.printInOrder();
-        a.printPostOrder();
-        a.printLeaf();
-        a.jumlahDaun();
-        a.depth();
-        System.out.println(a.size);
-        for (int i = 0; i < 9; i++) {
-            System.out.println(a.get(i));
+        for (int i = 1; i <= size; i++) {
+            a.push(i);
         }
-        a.push(10);
-        System.out.println(a.get(9));
-        System.out.println(a.size);
-        a.pop();
-        System.out.println(a.size);
+        btPush.endTimeM();
+
+        // Binary Tree Pop
+        btPop.startTimeM();
+        for (int i2 = 1; i2 < size / 2; i2++) {
+            a.pop();
+        }
+        btPop.endTimeM();
+
+        // Binary Tree Get
+        btGet.startTimeM();
+        a.get(a.size / 2);
+        btGet.endTimeM();
+
+        // Linked List Push
+        llPush.startTimeM();
+        MyLinkedList b = new MyLinkedList();
+        for (int j = 1; j <= size; j++) {
+            b.add(j);
+        }
+        llPush.endTimeM();
+
+        // Linked List Pop
+        llPop.startTimeM();
+        for (int j2 = 1; j2 < size / 2; j2++) {
+            b.removeLast();
+        }
+        llPop.endTimeM();
+
+        // Linked List Get
+        llGet.startTimeM();
+        b.get(b.size() / 2);
+        llGet.endTimeM();
+
+        btPush.runTimeM();
+        btPop.runTimeM();
+        btGet.runTimeM();
+        llPush.runTimeM();
+        llPop.runTimeM();
+        llGet.runTimeM();
     }
 }
