@@ -9,3 +9,8 @@ Compile and run:
 ```
 javac -d classes Main.java && java -cp classes Main
 ```
+
+or just run the script:
+```
+./run
+```
