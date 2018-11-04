@@ -10,7 +10,7 @@ class Main {
         HitungWaktu llPop = new HitungWaktu("Linked List pop");
         HitungWaktu llGet = new HitungWaktu("Linked List get");
 
-        int size = 10000000;
+        int size = 100000;
 
         // Binary Tree Push
         btPush.startTimeM();
@@ -20,17 +20,20 @@ class Main {
         }
         btPush.endTimeM();
 
+        // Binary Tree Get
+        btGet.startTimeM();
+        // System.out.println(a.get(a.size / 2));
+        for (int i2 = 0; i2 < a.size; i2++) {
+            a.get(i2);
+        }
+        btGet.endTimeM();
+
         // Binary Tree Pop
         btPop.startTimeM();
-        for (int i2 = 1; i2 < size / 2; i2++) {
+        for (int i3 = 0; i3 < size; i3++) {
             a.pop();
         }
         btPop.endTimeM();
-
-        // Binary Tree Get
-        btGet.startTimeM();
-        a.get(a.size / 2);
-        btGet.endTimeM();
 
         // Linked List Push
         llPush.startTimeM();
@@ -40,23 +43,27 @@ class Main {
         }
         llPush.endTimeM();
 
+        // Linked List Get
+        llGet.startTimeM();
+        // System.out.println(b.get(b.size() / 2));
+        for (int j2 = 0; j2 < b.size(); j2++) {
+            b.get(j2);
+        }
+        llGet.endTimeM();
+
         // Linked List Pop
         llPop.startTimeM();
-        for (int j2 = 1; j2 < size / 2; j2++) {
+        for (int j3 = 0; j3 < size; j3++) {
             b.removeLast();
         }
         llPop.endTimeM();
 
-        // Linked List Get
-        llGet.startTimeM();
-        b.get(b.size() / 2);
-        llGet.endTimeM();
-
         btPush.runTimeM();
-        btPop.runTimeM();
         btGet.runTimeM();
+        btPop.runTimeM();
+
         llPush.runTimeM();
-        llPop.runTimeM();
         llGet.runTimeM();
+        llPop.runTimeM();
     }
 }
