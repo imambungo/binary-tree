@@ -43,6 +43,7 @@ public class BinarySearchTree {
                 }
             }
         }
+        this.size++;
     }
 
     public boolean isOneElement() {

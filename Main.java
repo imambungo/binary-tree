@@ -66,11 +66,15 @@ class Main {
         // llPop.runTimeM();
 
         MyArray random = new MyArray();
-        int[] arr = random.randomArray(15);
+        int[] arr = random.randomArray(10);
+        int[] arr2 = random.randomArray(10);
         random.printArray(arr);
+        random.printArray(arr2);
 
         BinarySearchTree bst = new BinarySearchTree();
         bst.insert(arr);
+        bst.printInOrder();
+        bst.insert(arr2);
         bst.printInOrder();
     }
 }
