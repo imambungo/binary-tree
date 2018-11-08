@@ -71,5 +71,8 @@ class Main {
 
         BinarySearchTree bst = new BinarySearchTree();
         bst.insert(arr);
+        bst.printPreOrder();
+        bst.printInOrder();
+        bst.printPostOrder();
     }
 }
