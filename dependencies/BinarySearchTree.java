@@ -18,12 +18,37 @@ public class BinarySearchTree {
     }
 
     public void insert(int[] toInsert) {
+        for (int i : toInsert) {
+            insert(i);
+        }
+    }
 
+    public void insert(int newValue) {
+        if (this.root == null) {
+            this.root = new Node(newValue);
+        } else {
+            Node pointer = this.root;
+            while (true) {
+                if (pointer.getLeftChild() != null && pointer.getLeftChild().getValue() < pointer.getValue()) {
+                    pointer = pointer.getLeftChild();
+                } else if (pointer.getRightChild() != null
+                        && pointer.getRightChild().getValue() >= pointer.getValue()) {
+                    pointer = pointer.getRightChild();
+                } else {
+                    if (newValue < pointer.getValue()) {
+                        pointer.setLeftChild(newValue);
+                    } else {
+                        pointer.setRightChild(newValue);
+                    }
+                }
+            }
+        }
     }
 
     public boolean isOneElement() {
         // if (!isEmpty()) {
-        // return this.root.getRightChild() == null && this.root.getLeftChild() == null;
+        // return this.root.getRightChild() == null && this.root.getRightChild() ==
+        // null;
         // }
         // return false;
         return this.size == 1;
@@ -40,19 +65,19 @@ public class BinarySearchTree {
     }
 
     // public void generateCompleteSearch(int n) {
-    //     if (this.root != null) {
-    //         System.out.println("Sudah ada isi, bikin binary tree kosong dulu!");
-    //     } else {
-    //         plant(1);
-    //         if (2 <= n) {
-    //             this.root.setLeftChild(2);
-    //             this.root.getLeftChild().generateCompleteSearch(n);
-    //         }
-    //         if (3 <= n) {
-    //             this.root.setRightChild(3);
-    //             this.root.getRightChild().generateCompleteSearch(n);
-    //         }
-    //     }
+    // if (this.root != null) {
+    // System.out.println("Sudah ada isi, bikin binary tree kosong dulu!");
+    // } else {
+    // plant(1);
+    // if (2 <= n) {
+    // this.root.setLeftChild(2);
+    // this.root.getLeftChild().generateCompleteSearch(n);
+    // }
+    // if (3 <= n) {
+    // this.root.setRightChild(3);
+    // this.root.getRightChild().generateCompleteSearch(n);
+    // }
+    // }
     // }
 
     public int get(int index) {
