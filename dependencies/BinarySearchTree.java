@@ -47,6 +47,7 @@ public class BinarySearchTree {
     }
 
     public boolean isBST() {
+        if (this.root == null) return true;
         return this.root.isBST();
     }
 
