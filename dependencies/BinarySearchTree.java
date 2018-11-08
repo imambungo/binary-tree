@@ -1,10 +1,10 @@
-package dependecies;
+package dependencies;
 
 public class BinarySearchTree {
     public Node root;
     public int size;
 
-    public BinaryTree() {
+    public BinarySearchTree() {
         this.root = null;
     }
 
@@ -15,6 +15,10 @@ public class BinarySearchTree {
     public void plant(int value) {
         this.root = new Node(value);
         this.size++;
+    }
+
+    public void insert(int[] toInsert) {
+
     }
 
     public boolean isOneElement() {
@@ -35,21 +39,21 @@ public class BinarySearchTree {
         return this.root.getLeftChild().isSkewedLeft();
     }
 
-    public void generateCompleteBinaryTree(int n) {
-        if (this.root != null) {
-            System.out.println("Sudah ada isi, bikin binary tree kosong dulu!");
-        } else {
-            plant(1);
-            if (2 <= n) {
-                this.root.setLeftChild(2);
-                this.root.getLeftChild().generateCompleteBinaryTree(n);
-            }
-            if (3 <= n) {
-                this.root.setRightChild(3);
-                this.root.getRightChild().generateCompleteBinaryTree(n);
-            }
-        }
-    }
+    // public void generateCompleteSearch(int n) {
+    //     if (this.root != null) {
+    //         System.out.println("Sudah ada isi, bikin binary tree kosong dulu!");
+    //     } else {
+    //         plant(1);
+    //         if (2 <= n) {
+    //             this.root.setLeftChild(2);
+    //             this.root.getLeftChild().generateCompleteSearch(n);
+    //         }
+    //         if (3 <= n) {
+    //             this.root.setRightChild(3);
+    //             this.root.getRightChild().generateCompleteSearch(n);
+    //         }
+    //     }
+    // }
 
     public int get(int index) {
         if (index < 0 || index > this.size - 1) {

@@ -1,6 +1,4 @@
-import dependencies.MyLinkedList;
-import dependencies.HitungWaktu;
-import dependencies.MyArray;
+import dependencies.*;
 
 class Main {
     public static void main(String[] args) {
@@ -71,5 +69,7 @@ class Main {
         int[] arr = random.randomArray(15);
         random.printArray(arr);
 
+        BinarySearchTree bst = new BinarySearchTree();
+        bst.insert(arr);
     }
 }

@@ -1,5 +1,5 @@
 # Compiled class file
-# *.class
+*.class
 
 # Log file
 *.log
@@ -32,3 +32,5 @@ preexec.sh
 
 # for storing output
 typescript
+
+.gitignore
