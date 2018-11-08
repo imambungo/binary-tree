@@ -29,10 +29,9 @@ public class BinarySearchTree {
         } else {
             Node pointer = this.root;
             while (true) {
-                if (pointer.getLeftChild() != null && pointer.getLeftChild().getValue() < pointer.getValue()) {
+                if (pointer.getLeftChild() != null && newValue < pointer.getValue()) {
                     pointer = pointer.getLeftChild();
-                } else if (pointer.getRightChild() != null
-                        && pointer.getRightChild().getValue() >= pointer.getValue()) {
+                } else if (pointer.getRightChild() != null && newValue >= pointer.getValue()) {
                     pointer = pointer.getRightChild();
                 } else {
                     if (newValue < pointer.getValue()) {
