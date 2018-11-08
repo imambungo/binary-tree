@@ -46,6 +46,10 @@ public class BinarySearchTree {
         this.size++;
     }
 
+    public boolean isBST() {
+        return this.root.isBST();
+    }
+
     public boolean isOneElement() {
         // if (!isEmpty()) {
         // return this.root.getRightChild() == null && this.root.getRightChild() ==
@@ -389,6 +393,23 @@ public class BinarySearchTree {
             returnSize += this.leftChild != null ? this.leftChild.size() : 0;
             returnSize += this.rightChild != null ? this.rightChild.size() : 0;
             return returnSize;
+        }
+
+        public boolean isBST() {
+            if (this.leftChild != null && this.leftChild.getValue() >= this.value) {
+                return false;
+            } else if (this.rightChild != null && this.rightChild.getValue() < this.value) {
+                return false;
+            } else {
+                if (this.leftChild != null && this.rightChild != null) {
+                    return this.leftChild.isBST() && this.rightChild.isBST();
+                } else if (this.leftChild != null) {
+                    return this.leftChild.isBST();
+                } else if (this.rightChild != null) {
+                    return this.rightChild.isBST();
+                } else
+                    return true;
+            }
         }
     }
 }

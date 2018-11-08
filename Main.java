@@ -76,5 +76,6 @@ class Main {
         bst.printInOrder();
         bst.insert(arr2);
         bst.printInOrder();
+        System.out.println(bst.isBST());
     }
 }
